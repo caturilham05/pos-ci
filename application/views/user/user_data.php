@@ -33,7 +33,7 @@
                     $no = 1;
                     foreach($row->result() as $user => $data) {?>
                     <tr>
-                        <td><?=$no++?></td>
+                        <td><?=$no++?>.</td>
                         <td><?=$data->username?></td>
                         <td><?=$data->name?></td>
                         <td><?=$data->address?></td>

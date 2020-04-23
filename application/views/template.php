@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
@@ -115,6 +116,7 @@
             </span>
           </a>
         </li>
+        <?php if($this->fungsi->user_login()->level == 1) { ?>
         <li>
           <a href="<?php echo site_url('supplier')?>">
             <i class="fa fa-truck"></i>
@@ -123,8 +125,9 @@
             </span>
           </a>
         </li>
+        <?php } ?>
         <li>
-          <a href="#">
+          <a href="<?= site_url('pelanggan')?>">
             <i class="fa fa-users"></i>
             <span>Customers</span>
             <span class="pull-right-container">
@@ -152,7 +155,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('supplier/supplier_data')?>"><i class="fa fa-circle-o"></i>Data Suppliers</a></li>
+            <li><a href="<?php echo site_url('category')?>"><i class="fa fa-circle-o"></i>Category</a></li>
+            <li><a href="<?php echo site_url('unit')?>"><i class="fa fa-circle-o"></i>Unit</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -431,5 +435,12 @@
 <script src="<?php echo base_url()?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url()?>assets/dist/js/demo.js"></script>
+<script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#table1').DataTable()
+  })
+</script>
 </body>
 </html>
