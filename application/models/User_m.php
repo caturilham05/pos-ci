@@ -3,10 +3,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_m extends CI_Model{
     public function login($post){
+    //    $arr = array(
+    //        'username' => $post['username'],
+    //        'password' => sha1($post['username'])
+    //    );
+
+    //    $this->db->where($arr);
+    //    $query = $this->db->get('user');
+    //    $resultArray = $query->row_array();
+    //         $this->db->where('user_id', $resultArray['user_id']);
+    //         $this->db->update('user', array('last_login' => time()));
+    //    return $resultArray;
+
+       
+       
         $this->db->select('*');
-        $this->db->from('user');
         $this->db->where('username', $post['username']);
         $this->db->where('password', sha1($post['password']));
+        $array = array('last_login' => time());
+        $this->db->update('user',$array);
+        $this->db->from('user');
         $query = $this->db->get();
         return $query;
     }

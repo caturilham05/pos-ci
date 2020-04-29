@@ -1,8 +1,8 @@
 <section class="content-header">
     <h1>Customers<small>&nbsp;Input</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Customers</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Add Customers</li>
     </ol>
 </section>
 

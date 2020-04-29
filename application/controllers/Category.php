@@ -23,10 +23,6 @@ class Category extends CI_Controller {
 		$category = new stdClass();
 		$category->category_id = null;
 		$category->name = null;
-		$category->phone = null;
-		$category->email = null;
-		$category->address = null;
-		$category->description = null;
 		$data = array(
 			'page' => 'add',
 			'row' => $category

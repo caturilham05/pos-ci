@@ -1,9 +1,8 @@
 <section class="content-header">
     <h1>Unit<small>&nbsp;Input</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-        <li class="">Products</li>
-        <li class="active">Unit</li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Add Unit</li>
     </ol>
 </section>
 

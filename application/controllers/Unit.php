@@ -23,10 +23,6 @@ class Unit extends CI_Controller {
 		$unit = new stdClass();
 		$unit->unit_id = null;
 		$unit->name = null;
-		$unit->phone = null;
-		$unit->email = null;
-		$unit->address = null;
-		$unit->description = null;
 		$data = array(
 			'page' => 'add',
 			'row' => $unit

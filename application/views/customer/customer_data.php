@@ -1,7 +1,7 @@
 <section class="content-header">
     <h1>Customers<small>&nbsp;Pelanggan</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
         <li class="active">Customers</li>
     </ol>
 </section>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped text-center" id="table1">
+            <table class="table table-bordered table-striped text-center" id="example1">
                 <thead>
                     <tr>
                         <th>No.</th>

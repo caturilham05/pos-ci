@@ -4,8 +4,7 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?= site_url('dashboard')?>" class="active"><i class="fa fa-dashboard"></i>Home</a></li>
       </ol>
     </section>
 
@@ -17,9 +16,9 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h4 class="text-bold"><?= date('d.m.Y', $_SESSION['last_login']) ?></h4>
 
-              <p>New Orders</p>
+              <h4><?= date('H:i:s', $_SESSION['last_login']) ?></h4>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -47,7 +46,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?= number_format?></h3>
 
               <p>User Registrations</p>
             </div>

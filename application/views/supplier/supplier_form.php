@@ -1,8 +1,8 @@
 <section class="content-header">
     <h1>Suppliers<small>Shop</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Suppliers</li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Add Suppliers</li>
     </ol>
 </section>
 

@@ -1,8 +1,8 @@
 <section class="content-header">
-    <h1>Category<small>&nbsp;Product</small></h1>
+    <h1>Items<small>&nbsp;Product</small></h1>
     <ol class="breadcrumb">
-        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="Active">Category</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Items</li>
     </ol>
 </section>
 
@@ -11,9 +11,9 @@
             <?php $this->view('messages')?>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title"><b>Data</b>&nbsp;Category</h3>
+            <h3 class="box-title"><b>Data</b>&nbsp;Items</h3>
             <div class="pull-right">
-            <a href="<?= site_url('category/add')?>" class="btn btn-primary btn-flat"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Add Category</a> 
+            <a href="<?= site_url('item/add')?>" class="btn btn-primary btn-flat"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Add Items</a> 
             <!-- (pelanggan/add) dari routes -->
             </div>
         </div>
@@ -22,6 +22,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
+                        <th>Barcode</th>
                         <th>Name</th>
                         <th>Action</th>
                     </tr>
@@ -29,13 +30,14 @@
                 <tbody>
                 <?php
                     $no = 1;
-                    foreach($row->result() as $category => $data) {?>
+                    foreach($row->result() as $item => $data) {?>
                     <tr>
                         <td style="width: 10%"><?=$no++?>.</td>
-                        <td style="width: 70%"><?=$data->name?></td>
+                        <td><?=$data->barcode?></td>
+                        <td style="width: 55%"><?=$data->name?></td>
                         <td>
-                        <a href="<?= site_url('category/edit/'.$data->category_id)?>" class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
-                        <a href="<?= site_url('category/del/'.$data->category_id)?>" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Delete</a>
+                        <a href="<?= site_url('item/edit/'.$data->item_id)?>" class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                        <a href="<?= site_url('item/del/'.$data->item_id)?>" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Delete</a>
                         </td>
                     </tr>
                     <?php } ?>

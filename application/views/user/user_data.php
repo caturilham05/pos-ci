@@ -1,8 +1,8 @@
 <section class="content-header">
     <h1>Users<small>Pengguna</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Users</li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li <?= $this->uri->segment(1) == 'user' ? 'class="active"' : '' ?>>Users</li>
     </ol>
 </section>
 
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped text-center">
+            <table class="table table-bordered table-striped text-center" id="example1">
                 <thead>
                     <tr>
                         <th>No.</th>

@@ -1,13 +1,14 @@
 <section class="content-header">
     <h1>Suppliers<small>Shop</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
         <li class="active">Suppliers</li>
     </ol>
 </section>
 
 <!-- Main Content -->
 <section class="content">
+
     <div class="box">
         <div class="box-header">
             <h3 class="box-title"><b>Data</b> Suppliers</h3>
@@ -16,7 +17,7 @@
             </div>
         </div>
         <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped text-center">
+            <table class="table table-bordered table-striped text-center" id="example1">
                 <thead>
                     <tr>
                         <th>No.</th>

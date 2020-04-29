@@ -1,3 +1,13 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "liveServer.settings.multiRootWorkspaceName": "pos-ci",
+     // Terutama untuk file statis 
+     "liveServer.settings.useWebExt" : true ,
+     // Ini berarti Anda mengubah URL asli Anda (url PHP saat ini) 
+    // ke URL lain (yang dimulai oleh Live Sever). 
+    "liveServer.settings.proxy" : { 
+        "enable" : true ,                              // i. diaktifkan 
+        "baseUri" : "/" ,                              // ii. workspace 
+        "proxyUri" : "http://localhost:80/pos-ci"  // iii. alamat aktual 
+    } , 
 }

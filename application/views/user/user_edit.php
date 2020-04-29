@@ -1,8 +1,8 @@
 <section class="content-header">
     <h1>Users<small>Pengguna</small></h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i></a></li>
-        <li class="active">Users</li>
+        <li><a href="<?= site_url('dashboard')?>"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Edit Users</li>
     </ol>
 </section>
 

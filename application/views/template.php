@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
@@ -109,7 +110,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
+        <li <?= $this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="active"' : '' ?>>
           <a href="<?php echo site_url('dashboard')?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -117,7 +118,7 @@
           </a>
         </li>
         <?php if($this->fungsi->user_login()->level == 1) { ?>
-        <li>
+        <li <?= $this->uri->segment(1) == 'supplier' ? 'class="active"' : '' ?>>
           <a href="<?php echo site_url('supplier')?>">
             <i class="fa fa-truck"></i>
             <span>Suppliers</span>
@@ -126,7 +127,7 @@
           </a>
         </li>
         <?php } ?>
-        <li>
+        <li <?= $this->uri->segment(1) == 'pelanggan' ? 'class="active"' : '' ?>>
           <a href="<?= site_url('pelanggan')?>">
             <i class="fa fa-users"></i>
             <span>Customers</span>
@@ -146,7 +147,7 @@
             <li><a href="<?php echo site_url('supplier/supplier_data')?>"><i class="fa fa-circle-o"></i>Data Suppliers</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview <?= $this->uri->segment(1) == 'category' || $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == 'item'  ? 'active'  : '' ?>">
           <a href="#">
             <i class="fa fa-cube"></i>
             <span>Products</span>
@@ -155,8 +156,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('category')?>"><i class="fa fa-circle-o"></i>Category</a></li>
-            <li><a href="<?php echo site_url('unit')?>"><i class="fa fa-circle-o"></i>Unit</a></li>
+            <li <?= $this->uri->segment(1) == 'category' ? 'class="active"' : '' ?>><a href="<?php echo site_url('category')?>"><i class="fa fa-circle-o"></i>Category</a></li>
+            <li <?= $this->uri->segment(1) == 'unit' ? 'class="active"' : '' ?>><a href="<?php echo site_url('unit')?>"><i class="fa fa-circle-o"></i>Unit</a></li>
+            <li <?= $this->uri->segment(1) == 'item' ? 'class="active"' : '' ?>><a href="<?php echo site_url('item')?>"><i class="fa fa-circle-o"></i>Items</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -173,7 +175,7 @@
         </li>
         <?php if($this->fungsi->user_login()->level == 1) { ?>
         <li class="header">SETTINGS</li>
-        <li>
+        <li <?= $this->uri->segment(1) == 'user' ? 'class="active"' : '' ?>>
           <a href="<?php echo site_url('user')?>">
             <i class="fa fa-user"></i>
             <span>Users</span>
@@ -435,11 +437,20 @@
 <script src="<?php echo base_url()?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url()?>assets/dist/js/demo.js"></script>
-<script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"></script>
-
+<!-- DataTables -->
+<script src="<?php echo base_url()?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
-  $(document).ready(function(){
-    $('#table1').DataTable()
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
   })
 </script>
 </body>
